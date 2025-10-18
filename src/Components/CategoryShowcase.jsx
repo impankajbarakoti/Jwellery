@@ -1,4 +1,8 @@
 import React from "react";
+import BB1 from '../assets/BB1.jpg'
+import BB2 from "../assets/BB2.jpg";
+import BB3 from "../assets/BB3.jpg";
+import BB4 from "../assets/BB4.jpg";
 
 // Reusable component for each category block
 const CategoryBlock = ({ imageUrl, title, itemCount, link }) => {
@@ -46,29 +50,26 @@ const  CategoryShowcase = () => {
     {
       title: "Earrings",
       itemCount: 15,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner2-1.jpg",
+      imageUrl: BB1,
       link: "#earrings",
     },
     {
       title: "Necklaces",
       itemCount: 15,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner2-2.jpg",
+      imageUrl: BB2,
       link: "#necklaces",
     },
     {
       title: "Rings",
       itemCount: 15,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner2-3.jpg",
+      imageUrl: BB3,
       link: "#rings",
     },
     {
       title: "Bracelets",
       itemCount: 15,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner2-4.jpg",
+        BB4,
       link: "#bracelets",
     },
   ];

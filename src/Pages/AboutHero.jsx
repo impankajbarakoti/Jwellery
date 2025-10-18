@@ -1,8 +1,7 @@
 import React from "react";
-
+import AH from '../assets/AH.jpg'
 // Corano theme ki aesthetic ke hisaab se ek placeholder image URL
-const HERO_IMAGE_URL =
-  "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/slideshow1-2.jpg"; // Example Image
+const HERO_IMAGE_URL = AH; // Example Image
 
 const AboutHero = () => {
   return (

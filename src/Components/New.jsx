@@ -1,4 +1,8 @@
 import React from "react";
+import N1 from '../assets/N1.jpg'
+import N2 from "../assets/N2.jpg";
+import N3 from "../assets/N3.jpg";
+import N4 from "../assets/N4.jpg";
 // Import mock icons (in a real project, you'd install 'lucide-react' or similar)
 import { Heart, Scale3d, ShoppingCart } from "lucide-react";
 
@@ -82,7 +86,7 @@ const New = () => {
       category: "Chatelaine, Necklaces",
       price: 100.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/7.jpg",
+        N1,
       isSale: false,
     },
     {
@@ -91,7 +95,7 @@ const New = () => {
       category: "Brooches, Flatware",
       price: 86.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/15.jpg",
+        N2,
       isSale: false,
     },
     {
@@ -100,7 +104,7 @@ const New = () => {
       category: "Necklaces, Runners",
       price: 95.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/2.jpg",
+        N3,
       isSale: false,
     },
     {
@@ -110,7 +114,7 @@ const New = () => {
       price: 70.0,
       originalPrice: 80.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/13.jpg",
+        N4,
       isSale: true,
     },
   ];

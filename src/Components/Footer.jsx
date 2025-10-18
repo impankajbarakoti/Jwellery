@@ -1,5 +1,6 @@
 import React from "react";
-// Importing icons for contact details and social media
+import PAY from '../assets/PAY.png'
+import CORANO from '../assets/CORANO.png'
 import {
   MapPin,
   Mail,
@@ -12,14 +13,11 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
-  // Gold/Tan accent color
   const goldColor = "#B8A47E";
 
-  // Placeholder logo (you would replace this with your actual logo import)
   const logoUrl =
     "http://wp.plazathemes.com/corano/wp-content/uploads/2019/07/logo_corano.png";
 
-  // Icon data for social media
   const socialIcons = [
     { icon: Facebook, link: "#facebook" },
     { icon: Twitter, link: "#twitter" },
@@ -31,14 +29,13 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 pt-12 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* --- 1. Top Section: Grid of Columns (Logo, Contact, Info, Follow) --- */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4 mb-12">
+        {/* --- 1. Top Section --- */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12 text-left">
           {/* Column 1: Logo and About */}
-          <div className="col-span-2 md:col-span-1">
-            {/* Logo with placeholder for a clean look */}
-            <div className="flex items-center mb-4">
+          <div>
+            <div className="flex items-center mb-4 justify-start">
               <img
-                src={logoUrl}
+                src={CORANO}
                 alt="Corano Logo"
                 className="h-6 w-auto"
                 onError={(e) => {
@@ -90,17 +87,37 @@ const Footer = () => {
               Information
             </h4>
             <ul className="space-y-2 text-sm">
-              <li className="text-gray-600 hover:text-gray-900 transition">
-                <a href="/">Home</a>
+              <li>
+                <a
+                  href="/"
+                  className="text-gray-600 hover:text-gray-900 transition"
+                >
+                  Home
+                </a>
               </li>
-              <li className="text-gray-600 hover:text-gray-900 transition">
-                <a href="/about">About</a>
+              <li>
+                <a
+                  href="/about"
+                  className="text-gray-600 hover:text-gray-900 transition"
+                >
+                  About
+                </a>
               </li>
-              <li className="text-gray-600 hover:text-gray-900 transition">
-                <a href="/contact">Contact</a>
+              <li>
+                <a
+                  href="/contact"
+                  className="text-gray-600 hover:text-gray-900 transition"
+                >
+                  Contact
+                </a>
               </li>
-              <li className="text-gray-600 hover:text-gray-900 transition">
-                <a href="/blogs">Our Blogs</a>
+              <li>
+                <a
+                  href="/blogs"
+                  className="text-gray-600 hover:text-gray-900 transition"
+                >
+                  Our Blogs
+                </a>
               </li>
             </ul>
           </div>
@@ -110,7 +127,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-gray-900 mb-4">
               Follow Us
             </h4>
-            <div className="flex space-x-3 mb-6">
+            <div className="flex flex-wrap sm:flex-nowrap sm:space-x-3 gap-2 sm:gap-0">
               {socialIcons.map((item, index) => (
                 <a
                   key={index}
@@ -124,10 +141,10 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* --- 2. Bottom Section: Newsletter and Payments --- */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+        {/* --- 2. Bottom Section --- */}
+        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center text-left gap-6">
           {/* Newsletter */}
-          <div className="mb-6 md:mb-0 w-full md:w-1/3 lg:w-1/4">
+          <div className="w-full md:w-1/3 lg:w-1/4">
             <h4 className="text-lg font-semibold text-gray-900 mb-2">
               Sign Up To Newsletter
             </h4>
@@ -147,15 +164,12 @@ const Footer = () => {
           </div>
 
           {/* Payment Logos */}
-          {/* Using simple text/icons to represent the grayscale payment logos */}
-          <div className="h-6 w-auto flex items-center space-x-4 text-xs font-bold text-gray-700">
-            <span className="p-1 rounded bg-white shadow-sm">
-              <img
-                src="http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/img-payment-300x24.png"
-                alt="Payment Methods"
-                className="h-6" // Adjust the height to fit within the container
-              />
-            </span>
+          <div className="flex items-center space-x-4">
+            <img
+              src={PAY}
+              alt="Payment Methods"
+              className="h-6 object-contain"
+            />
           </div>
         </div>
       </div>

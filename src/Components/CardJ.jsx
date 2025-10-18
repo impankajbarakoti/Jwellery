@@ -1,4 +1,8 @@
 import React from "react";
+import B1 from '../assets/B1.jpg'
+import B2 from "../assets/B2.jpg";
+import B3 from "../assets/B3.jpg";
+import B4 from "../assets/B4.jpg";
 
 // Reusable component for each category banner
 const CategoryCard = ({ imageUrl, subTitle, title, link }) => {
@@ -56,28 +60,28 @@ const CardJ = () => {
       subTitle: "Beautiful",
       title: "Wedding Rings",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner1-1.jpg",
+        B1,
       link: "#rings",
     },
     {
       subTitle: "Earring",
       title: "Tangerine Floral Earring",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner1-2.jpg",
+        B2,
       link: "#earrings",
     },
     {
       subTitle: "New Arrivals",
       title: "Pearl Necklaces",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner1-3.jpg",
+        B3,
       link: "#necklaces",
     },
     {
       subTitle: "New Design",
       title: "Diamond Jewelry",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner1-4.jpg",
+               B4,
       link: "#diamond",
     },
   ];

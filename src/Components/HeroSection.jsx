@@ -1,5 +1,5 @@
 import React from "react";
-
+import Hero from '../assets/Hero.jpg'
 const HeroSection = () => {
   return (
     <section className="relative">
@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/slideshow1-1.jpg')`,
+          backgroundImage: `url(${Hero})`,
         }}
       >
         {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}

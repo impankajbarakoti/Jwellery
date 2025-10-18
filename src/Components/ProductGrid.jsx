@@ -1,216 +1,11 @@
-// import React, { useState } from "react";
-// import { Heart, Scale3d, Eye } from "lucide-react";
-
-// // --- Reusable Product Card Component ---
-// const ProductCard = ({ product }) => {
-//   const [liked, setLiked] = useState(false); // State to handle the heart toggle
-
-//   const goldColor = "#B8A47E";
-
-//   // Function to format the price display
-//   const formatPrice = () => {
-//     if (product.priceRange) {
-//       return (
-//         <span className="text-lg font-semibold text-gray-900">
-//           ${product.priceRange.min.toFixed(2)} - $
-//           {product.priceRange.max.toFixed(2)}
-//         </span>
-//       );
-//     }
-//     if (product.isSale) {
-//       return (
-//         <span className="text-lg font-semibold">
-//           <span className="text-gray-400 line-through mr-2 font-normal text-base">
-//             ${product.originalPrice.toFixed(2)}
-//           </span>
-//           <span style={{ color: goldColor }}>${product.price.toFixed(2)}</span>
-//         </span>
-//       );
-//     }
-//     return (
-//       <span className="text-lg font-semibold text-gray-900">
-//         ${product.price.toFixed(2)}
-//       </span>
-//     );
-//   };
-
-//   // Toggle the heart (liked state)
-//   const toggleLike = () => {
-//     setLiked(!liked);
-//   };
-
-//   return (
-//     <div className="bg-white group rounded-lg transition-shadow duration-300 relative shadow-sm hover:shadow-lg">
-//       {/* Image & Action Buttons Area */}
-//       <div className="relative p-4 md:p-6 flex justify-center items-center h-64">
-//         {/* Sale Tag */}
-//         {product.isSale && (
-//           <span className="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
-//             Sale!
-//           </span>
-//         )}
-
-//         {/* Product Image */}
-//         <img
-//           src={product.imageUrl}
-//           alt={product.title}
-//           className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
-//           onError={(e) => {
-//             e.target.onerror = null;
-//             e.target.src =
-//               "https://placehold.co/400x400/f8f8f8/999999?text=Product";
-//           }}
-//         />
-
-//         {/* Action Buttons (Top Right) */}
-//         <div className="absolute top-4 right-4 flex flex-col space-y-2 transition-opacity duration-300">
-//           <button
-//             className={`p-2 rounded-full shadow-md hover:shadow-lg transition-shadow ${
-//               liked
-//                 ? "border-1 border-red-500 bg-red-500 text-white animate-bounce"
-//                 : "border-1 border-gray-500 bg-white text-gray-500"
-//             }`}
-//             onClick={toggleLike}
-//           >
-//             <Heart className="w-5 h-5" strokeWidth={1.5} />
-//           </button>
-//           <button className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow">
-//             <Scale3d className="w-5 h-5 text-gray-500" strokeWidth={1.5} />
-//           </button>
-//         </div>
-
-//         {/* 'View Products' Button (Hover Effect) */}
-//         {product.isViewButton && (
-//           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full px-8">
-//             <button className="w-full flex items-center justify-center bg-white text-gray-900 border border-gray-300 font-semibold py-2 rounded-full hover:bg-gray-100 transition duration-300 text-sm shadow-lg">
-//               <Eye className="w-4 h-4 mr-2" />
-//               View products
-//             </button>
-//           </div>
-//         )}
-//       </div>
-
-//       {/* Text Content Area */}
-//       <div className="p-4 pt-0 text-center">
-//         <p className="text-xs text-gray-400 font-light mb-1">
-//           {product.category}
-//         </p>
-//         <h3 className="text-base font-medium text-gray-800 mb-2 hover:text-gray-600 transition duration-200 cursor-pointer">
-//           {product.title}
-//         </h3>
-
-//         {/* Price Display */}
-//         <div className="pb-4">{formatPrice()}</div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// // --- Main Component ---
-// const ProductGrid = () => {
-//   const products = [
-//     {
-//       id: 1,
-//       title: "Carat Solitaire Diamond",
-//       category: "Rugs, Wall Decor",
-//       price: 78.0,
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/9.jpg",
-//       isSale: false,
-//     },
-//     {
-//       id: 2,
-//       title: "Pear-Shaped Black",
-//       category: "Brooches, Candles, Wall Decor",
-//       priceRange: { min: 68.0, max: 100.0 },
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/6.jpg",
-//       isViewButton: true,
-//     },
-//     {
-//       id: 3,
-//       title: "The World Jewelry",
-//       category: "Candles, Wall Decor",
-//       price: 115.0,
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/3.jpg",
-//       isSale: false,
-//     },
-//     {
-//       id: 4,
-//       title: "Women's Falla Earrings",
-//       category: "Candles, Wall Decor",
-//       price: 60.0,
-//       originalPrice: 85.0,
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/5.jpg",
-//       isSale: true,
-//     },
-//     {
-//       id: 5,
-//       title: "Lapis Hoop Earrings",
-//       category: "Clocks, Wall Decor",
-//       price: 115.0,
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/1.jpg",
-//       isSale: false,
-//     },
-//     {
-//       id: 6,
-//       title: "Sterling Silver Genuine",
-//       category: "Rugs, Wall Decor",
-//       price: 70.0,
-//       originalPrice: 80.0,
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/10.jpg",
-//       isSale: true,
-//     },
-//     {
-//       id: 7,
-//       title: "Women's Bijou Ear",
-//       category: "Brooches, Wall Decor",
-//       price: 45.0,
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/8.jpg",
-//       isSale: false,
-//     },
-//     {
-//       id: 8,
-//       title: "ZMens Womens 10K",
-//       category: "Candles, Wall Decor",
-//       priceRange: { min: 7.0, max: 9.0 },
-//       imageUrl:
-//         "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/19.jpg",
-//       isSale: true,
-//     },
-//   ];
-
-//   return (
-//     <div className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-//       <div className="max-w-7xl mx-auto">
-//         {/* Header Section */}
-//         <header className="text-center mb-10">
-//           <h2 className="text-4xl font-bold text-gray-900 mb-2">
-//             Our Products
-//           </h2>
-//           <p className="text-gray-500">
-//             Add our products to your weekly lineup
-//           </p>
-//         </header>
-
-//         {/* Product Grid */}
-//         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-//           {products.map((product) => (
-//             <ProductCard key={product.id} product={product} />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProductGrid;
-
+import P1 from '../assets/P1.jpg'
+import P2 from "../assets/P2.jpg";
+import P3 from "../assets/P3.jpg";
+import P4 from "../assets/P4.jpg";
+import P5 from "../assets/P5.jpg";
+import P6 from "../assets/P6.jpg";
+import P7 from "../assets/P7.jpg";
+import P8 from "../assets/P8.jpg";
 import React, { useState } from "react";
 import { Heart, Scale3d, Eye, X } from "lucide-react";
 
@@ -405,8 +200,7 @@ const ProductGrid = () => {
       title: "Carat Solitaire Diamond",
       category: "Rugs, Wall Decor",
       price: 78.0,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/9.jpg",
+      imageUrl: P1,
       isSale: false,
       isViewButton: true,
     },
@@ -415,8 +209,7 @@ const ProductGrid = () => {
       title: "Pear-Shaped Black",
       category: "Brooches, Candles, Wall Decor",
       priceRange: { min: 68.0, max: 100.0 },
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/6.jpg",
+      imageUrl: P2,
       isViewButton: true,
     },
     {
@@ -424,8 +217,7 @@ const ProductGrid = () => {
       title: "The World Jewelry",
       category: "Candles, Wall Decor",
       price: 115.0,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/3.jpg",
+      imageUrl: P3,
       isSale: false,
       isViewButton: true,
     },
@@ -436,7 +228,7 @@ const ProductGrid = () => {
       price: 60.0,
       originalPrice: 85.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/5.jpg",
+        P4,
       isSale: true,
       isViewButton: true,
     },
@@ -446,7 +238,7 @@ const ProductGrid = () => {
       category: "Clocks, Wall Decor",
       price: 115.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/1.jpg",
+        P5,
       isSale: false,
       isViewButton: true,
     },
@@ -457,7 +249,7 @@ const ProductGrid = () => {
       price: 70.0,
       originalPrice: 80.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/10.jpg",
+        P6,
       isSale: true,
       isViewButton: true,
     },
@@ -467,7 +259,7 @@ const ProductGrid = () => {
       category: "Brooches, Wall Decor",
       price: 45.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/8.jpg",
+        P7,
       isSale: false,
       isViewButton: true,
     },
@@ -477,7 +269,7 @@ const ProductGrid = () => {
       category: "Candles, Wall Decor",
       priceRange: { min: 7.0, max: 9.0 },
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/19.jpg",
+        P8,
       isSale: true,
       isViewButton: true,
     },

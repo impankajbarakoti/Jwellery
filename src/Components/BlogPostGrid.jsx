@@ -1,5 +1,7 @@
 import React from "react";
-
+import BLG1 from '../assets/BLG1.jpg'
+import BLG2 from "../assets/BLG2.jpg";
+import BLG3 from "../assets/BLG3.jpg";
 // --- Reusable BlogPostCard Component ---
 const BlogPostCard = ({ post }) => {
   return (
@@ -47,21 +49,21 @@ const BlogPostGrid = () => {
       title: "Quisque Egestas",
       date: "April 25, 2018",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/04/blog2-1110x700.jpg",
+       BLG1,
       link: "#post-1",
     },
     {
       title: "Post With Gallery",
       date: "April 24, 2018",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/04/blog3-1110x700.jpg",
+        BLG2,
       link: "#post-2",
     },
     {
       title: "Maecenas Ultricies",
       date: "April 24, 2018",
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/04/blog4-1110x700.jpg",
+        BLG3,
       link: "#post-3",
     },
   ];

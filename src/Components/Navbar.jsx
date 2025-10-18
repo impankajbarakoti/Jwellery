@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import CORANO from '../assets/CORANO.png'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <a href="/">
             <img
-              src="http://wp.plazathemes.com/corano/wp-content/uploads/2019/07/logo_corano.png"
+              src={CORANO}
               alt="Logo"
               className="w-20 md:w-30"
             />

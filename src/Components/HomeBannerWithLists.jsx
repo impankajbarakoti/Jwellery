@@ -1,5 +1,12 @@
 import React from 'react';
-
+import WR from '../assets/WR.jpg'
+import FP1 from '../assets/FP1.jpg'
+import FP2 from "../assets/FP2.jpg";
+import FP3 from "../assets/FP3.jpg";
+import FP4 from "../assets/FP4.jpg";
+import BS1 from '../assets/BS1.jpg'
+import BS2 from "../assets/BS2.jpg";
+import BS3 from "../assets/BS3.jpg";
 // --- Reusable Product Item Component for the vertical lists ---
 const ProductListItem = ({ product }) => {
   return (
@@ -53,26 +60,22 @@ const HomeBannerWithLists = () => {
     {
       title: "Carat Solitaire Diamond",
       price: 78.0,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/9-300x300.jpg",
+      imageUrl: FP1,
     },
     {
       title: "Diamond Band Ring",
       price: 86.0,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/15-300x300.jpg",
+      imageUrl: FP2,
     },
     {
       title: "Diamond Band Ring",
       price: 100.0,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/7-300x300.jpg",
+      imageUrl: FP3,
     },
     {
       title: "Dissent Collar Earring",
       price: 95.0,
-      imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/2-300x300.jpg",
+      imageUrl: FP4,
     },
   ];
 
@@ -81,25 +84,25 @@ const HomeBannerWithLists = () => {
       title: "Panther Bracelet",
       price: 100.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/17-300x300.jpg",
+        BS1,
     },
     {
       title: "Diamond Band Ring",
       price: 86.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/15-300x300.jpg",
+        FP2,
     },
     {
       title: "Sterling Silver Bead",
       price: 80.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/18-300x300.jpg",
+        BS2,
     },
     {
       title: "Silvermist Bracelet",
       price: 68.0,
       imageUrl:
-        "http://wp.plazathemes.com/corano/wp-content/uploads/2018/11/16-300x300.jpg",
+        BS3,
     },
   ];
 
@@ -110,7 +113,7 @@ const HomeBannerWithLists = () => {
         <div className="relative lg:w-1/3 min-h-[300px] lg:min-h-0 bg-gray-100 flex items-center p-8">
           {/* Background Image (using a simple placeholder) */}
           <img
-            src="http://wp.plazathemes.com/corano/wp-content/uploads/2019/04/banner3-300x237.jpg"
+            src={WR}
             alt="Wedding Rings"
             className="absolute inset-0 w-full h-full object-cover opacity-50"
           />
